@@ -1,6 +1,6 @@
 # TimeTracker - Sistema de Registro de Horas Trabajadas
 
-Una aplicación moderna y completa para el registro y seguimiento de horas trabajadas por equipos remotos. Diseñada con una interfaz limpia estilo SaaS, completamente responsive y con funcionalidades avanzadas de monitoreo.
+Una aplicación moderna y completa para el registro y seguimiento de horas trabajadas por equipos remotos. Diseñada con una interfaz limpia estilo SaaS, completamente responsive y con funcionalidades avanzadas de monitoreo. **Sin sistema de login** - acceso directo por selección de rol.
 
 ## 🚀 Características Principales
 
@@ -11,7 +11,7 @@ Una aplicación moderna y completa para el registro y seguimiento de horas traba
 - Persistencia automática en almacenamiento local
 
 ### 👥 **Gestión de Usuarios y Roles**
-- Sistema de autenticación con roles diferenciados
+- Sistema de selección de rol sin autenticación
 - **Administrador**: Acceso completo al sistema
 - **Empleado**: Acceso a funciones de registro de tiempo
 - Perfiles de usuario personalizables
@@ -41,25 +41,23 @@ Una aplicación moderna y completa para el registro y seguimiento de horas traba
 - Ideal para demos y pruebas
 - Fácil migración a base de datos cuando sea necesario
 
-## 🧪 Cuentas de Prueba
+## 🧪 Usuarios de Prueba
 
-La aplicación incluye datos mock preconfigurados para probar todas las funcionalidades:
+La aplicación incluye usuarios mock preconfigurados. **No requiere login** - simplemente selecciona el rol y luego el usuario:
 
 ### 👨‍💼 **Cuenta Administrador**
-- **Email**: `admin@demo.com`
-- **Contraseña**: `password`
+- **Nombre**: Administrador Demo
+- **Email**: admin@demo.com
 - **Permisos**: Acceso completo al sistema, dashboard, reportes
 
 ### 👩‍💻 **Cuenta Empleado 1**
-- **Email**: `empleado@demo.com`
-- **Contraseña**: `password`
 - **Nombre**: Juan Pérez
+- **Email**: empleado@demo.com
 - **Permisos**: Registro de tiempo, visualización de tareas asignadas
 
 ### 👩‍💻 **Cuenta Empleado 2**
-- **Email**: `maria@demo.com`
-- **Contraseña**: `password`
 - **Nombre**: María García
+- **Email**: maria@demo.com
 - **Permisos**: Registro de tiempo, visualización de tareas asignadas
 
 ## 📊 Datos de Prueba Incluidos
@@ -101,19 +99,20 @@ npm run dev
 
 ### **Acceso a la Aplicación**
 1. Abrir navegador en `http://localhost:5173`
-2. Usar cualquiera de las cuentas de prueba listadas arriba
-3. Explorar las funcionalidades según el rol del usuario
+2. Seleccionar rol (Administrador o Empleado)
+3. Elegir usuario específico
+4. Explorar las funcionalidades según el rol seleccionado
 
 ## 📱 Funcionalidades por Rol
 
-### **Administrador** (`admin@demo.com`)
+### **Administrador** (Administrador Demo)
 - ✅ Dashboard con estadísticas generales
 - ✅ Gestión de proyectos y tareas
 - ✅ Visualización de todos los empleados
 - ✅ Reportes completos con exportación
 - ✅ Configuración del sistema
 
-### **Empleado** (`empleado@demo.com` / `maria@demo.com`)
+### **Empleado** (Juan Pérez / María García)
 - ✅ Temporizador de tiempo real
 - ✅ Registro manual de horas
 - ✅ Visualización de tareas asignadas

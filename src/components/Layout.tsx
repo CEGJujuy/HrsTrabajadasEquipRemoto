@@ -1,11 +1,10 @@
 import React from 'react';
-import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom';
+import { Outlet, Link, useLocation } from 'react-router-dom';
 import { 
   Clock, 
   BarChart3, 
   Users, 
   FolderOpen, 
-  Settings, 
   LogOut,
   Menu,
   X
@@ -24,12 +23,10 @@ const navigation = [
 export function Layout() {
   const { profile, signOut } = useAuth();
   const location = useLocation();
-  const navigate = useNavigate();
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const handleSignOut = async () => {
     await signOut();
-    navigate('/login');
   };
 
   const filteredNavigation = navigation.filter(

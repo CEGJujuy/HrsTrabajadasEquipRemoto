@@ -4,14 +4,13 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Toaster } from 'sonner';
 import { useAuth } from './hooks/useAuth';
 import { Layout } from './components/Layout';
+import { RoleSelector } from './components/RoleSelector';
 import { TimerPage } from './pages/TimerPage';
-import { LoginPage } from './pages/LoginPage';
-import { RegisterPage } from './pages/RegisterPage';
 
 const queryClient = new QueryClient();
 
 function AppContent() {
-  const { user, loading } = useAuth();
+  const { profile, loading, signIn } = useAuth();
 
   if (loading) {
     return (
@@ -21,13 +20,9 @@ function AppContent() {
     );
   }
 
-  if (!user) {
+  if (!profile) {
     return (
-      <Routes>
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="*" element={<Navigate to="/login" replace />} />
-      </Routes>
+      <RoleSelector onUserSelect={signIn} />
     );
   }
 
